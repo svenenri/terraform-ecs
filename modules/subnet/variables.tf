@@ -1,5 +1,5 @@
 variable "name" {
-  description = "Name of the subnet, actual name will be, for example: name_eu-west-1a"
+  description = "Name of the subnet, actual name will be, for example: name_us-west-2a"
 }
 
 variable "environment" {
@@ -13,7 +13,7 @@ variable "cidrs" {
 
 variable "availability_zones" {
   type        = "list"
-  description = "List of avalibility zones you want. Example: eu-west-1a and eu-west-1b"
+  description = "List of avalibility zones you want. Example: us-west-2a and us-west-2b"
 }
 
 variable "vpc_id" {

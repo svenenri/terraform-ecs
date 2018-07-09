@@ -15,7 +15,7 @@ module "ecs_instances" {
   cluster                 = "${var.cluster}"
   instance_group          = "${var.instance_group}"
   private_subnet_ids      = "${module.network.private_subnet_ids}"
-  aws_ami                 = "${var.ecs_aws_ami}"
+  aws_ami                 = "${data.aws_ami.ecs_aws_ami.id}"
   instance_type           = "${var.instance_type}"
   max_size                = "${var.max_size}"
   min_size                = "${var.min_size}"

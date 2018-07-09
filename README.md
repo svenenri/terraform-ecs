@@ -175,7 +175,7 @@ docker run \
   --volume=/sys:/sys:ro \
   --volume=/var/lib/docker:/var/lib/docker:ro \
   --log-driver=awslogs \
-  --log-opt=awslogs-region=eu-west-1 \
+  --log-opt=awslogs-region=us-west-2 \
   --log-opt=awslogs-group=cadvisor \
   --log-opt=awslogs-stream=${cluster_name}/$container_instance_id \
   google/cadvisor:v0.24.1

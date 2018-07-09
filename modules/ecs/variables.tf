@@ -1,3 +1,15 @@
+data "aws_ami" "ecs_aws_ami" {
+  most_recent = true
+  filter {
+  name = "owner-alias"
+  values = ["amazon"]
+  }
+  filter {
+  name = "name"
+  values = ["amzn-ami-*-amazon-ecs-optimized*"]
+  }
+}
+
 variable "environment" {
   description = "The name of the environment"
 }
@@ -34,7 +46,7 @@ variable "load_balancers" {
 
 variable "availability_zones" {
   type        = "list"
-  description = "List of avalibility zones you want. Example: eu-west-1a and eu-west-1b"
+  description = "List of avalibility zones you want. Example: us-west-2a and us-west-2b"
 }
 
 variable "max_size" {
@@ -57,9 +69,13 @@ variable "instance_type" {
   description = "AWS instance type to use"
 }
 
-variable "ecs_aws_ami" {
-  description = "The AWS ami id to use for ECS"
-}
+# variable "ecs_aws_ami" {
+#   description = "The AWS ami id to use for ECS"
+# }
+#
+# variable "aws_ami" {
+#   description = "AWS AMI ID for use with ECS"
+# }
 
 variable "custom_userdata" {
   default     = ""
